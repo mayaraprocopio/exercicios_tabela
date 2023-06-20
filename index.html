@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style.css" id="linkEstilos">
+        
+    
         <title>Desafio de Tabelas</title>
     </head>
     <body>
@@ -67,6 +69,31 @@
                 </tr>
             </tfoot>
         </table>
+      
+        <button type="button" id="botao">Remover estilos</button>
+
+        <script>
+            function toggleEstilos(){
+                const linkEstilos = document.querySelector('#linkEstilos');
+                if(linkEstilos.hasAttribute('disabled')){
+                    linkEstilos.removeAttribute('disabled');
+                    botao.innerHTML = 'Remover Estilos';
+                    botao.classList.remove('nova classe');
+
+                }else{
+                    linkEstilos.setAttribute('disabled','');
+                    botao.innerHTML = 'Aplicar Estilos';
+                    botao.classList.add('nova classe');
+                }
+                
+            }
+            
+            const botao = document.querySelector('#botao');
+            botao.addEventListener('click', toggleEstilos);
+            /*botao.innerHTML= 'Novo texto do botão'*/
+                
+        </script>
+      
         
     </body>
     </html>
